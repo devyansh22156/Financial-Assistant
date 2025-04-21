@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Risk Advice</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='advice.css') }}">
+</head>
+<body>
+    <header class="header-section">
+        <h1>Financial Risk Assessment Results</h1>
+        <p>Your personalized advice based on the assessment:</p>
+    </header>
+
+    <main class="advice-section">
+        <div id="advice-high" class="advice {% if risk == 'High' %}visible{% else %}hidden{% endif %}">
+            <h2>High Risk</h2>
+            <p>It is crucial to reevaluate your financial strategies immediately. Consider these steps:</p>
+            <ul>
+                <li>Build an emergency fund to cover at least 6 months of expenses.</li>
+                <li>Reduce unnecessary expenses and prioritize debt repayment.</li>
+                <li>Consult a financial advisor to devise a robust risk management plan.</li>
+            </ul>
+        </div>
+
+        <div id="advice-medium" class="advice {% if risk == 'Medium' %}visible{% else %}hidden{% endif %}">
+            <h2>Medium Risk</h2>
+            <p>Your financial standing is moderately stable, but there’s room for improvement:</p>
+            <ul>
+                <li>Monitor your investments and diversify to minimize potential losses.</li>
+                <li>Strengthen savings and ensure proper insurance coverage.</li>
+                <li>Set up automatic contributions to retirement funds.</li>
+            </ul>
+        </div>
+
+        <div id="advice-low" class="advice {% if risk == 'Low' %}visible{% else %}hidden{% endif %}">
+            <h2>Low Risk</h2>
+            <p>Great work! You’re in a stable financial position. To maintain this:</p>
+            <ul>
+                <li>Continue to monitor your financial plans and adjust as needed.</li>
+                <li>Explore new investment opportunities to grow your wealth.</li>
+                <li>Review and update your financial goals annually.</li>
+            </ul>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2024 Financial Risk Assessment | All Rights Reserved</p>
+    </footer>
+
+    <script>
+        // Example: The Flask templating engine already renders the risk levels dynamically,
+        // so you don't need to modify this part in JS.
+        // It is rendered directly in HTML via Jinja2.
+    </script>
+</body>
+</html>
